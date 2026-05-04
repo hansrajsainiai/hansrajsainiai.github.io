@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Pro - Learn & Speak</title>
+    <!-- Google Fonts & Font Awesome for Graphics/Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #4a90e2;
+            --secondary-color: #2c3e50;
+            --accent-color: #f39c12;
+            --text-light: #ffffff;
+        }
+
+        body { 
+            font-family: 'Poppins', sans-serif; 
+            margin: 0; 
+            line-height: 1.6;
+            background: #f0f2f5; 
+        }
+
+        /* Animated Navigation */
+        nav { 
+            background: var(--secondary-color); 
+            padding: 15px 50px; 
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        nav a { color: white; margin-left: 20px; text-decoration: none; transition: 0.3s; }
+        nav a:hover { color: var(--accent-color); }
+
+        /* Hero Section with Background Image */
+        .hero { 
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                        url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            color: white; 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .hero h1 { font-size: 3rem; margin-bottom: 10px; animation: fadeIn 2s; }
+
+        /* Features Section */
+        .container { 
+            max-width: 1100px; 
+            margin: 40px auto; 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            padding: 0 20px;
+        }
+
+        .card { 
+            background: white; 
+            border-radius: 15px; 
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1); 
+            transition: transform 0.3s;
+            text-align: center;
+            padding-bottom: 20px;
+        }
+        .card:hover { transform: translateY(-10px); }
+        .card img { width: 100%; height: 180px; object-fit: cover; }
+        .card i { font-size: 40px; color: var(--primary-color); margin-top: 20px; }
+
+        /* Advanced Quiz Section */
+        .quiz-box {
+            background: #fff;
+            max-width: 700px;
+            margin: 40px auto;
+            padding: 30px;
+            border-left: 5px solid var(--accent-color);
+            border-radius: 10px;
+        }
+
+        .btn { 
+            background: var(--primary-color); 
+            color: white; 
+            padding: 12px 25px; 
+            border: none;
+            border-radius: 25px; 
+            cursor: pointer;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+        .btn:hover { background: #357abd; box-shadow: 0 5px 15px rgba(74,144,226,0.4); }
+
+        @keyframes fadeIn { from {opacity: 0;} to {opacity: 1;} }
+    </style>
+</head>
+<body>
+
+<nav>
+    <h2 style="color: white; margin: 0;">English<span style="color: var(--accent-color);">Pro</span></h2>
+    <div>
+        <a href="#lessons">Lessons</a>
+        <a href="#quiz">Quiz</a>
+        <a href="#community">Community</a>
+    </div>
+</nav>
+
+<div class="hero">
+    <h1>Master Spoken English</h1>
+    <p>Confidence ke saath English bolna shuru karein aaj hi!</p>
+    <button class="btn" style="background: var(--accent-color);">Start Free Course</button>
+</div>
+
+<div class="container" id="lessons">
+    <!-- Card 1 -->
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=500&q=60" alt="Vocabulary">
+        <i class="fas fa-book-open"></i>
+        <h3>Smart Vocabulary</h3>
+        <p>1000+ daily use words graphics ke saath.</p>
+        <button class="btn">Explore</button>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1543269664-76bc3997d9ea?auto=format&fit=crop&w=500&q=60" alt="Speaking">
+        <i class="fas fa-microphone-alt"></i>
+        <h3>Speaking Practice</h3>
+        <p>AI powered voice feedback system.</p>
+        <button class="btn">Try Now</button>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=500&q=60" alt="Grammar">
+        <i class="fas fa-graduation-cap"></i>
+        <h3>Grammar Mastery</h3>
+        <p>Tenses aur verbs bilkul asaan bhasha mein.</p>
+        <button class="btn">Learn</button>
+    </div>
+</div>
+
+<!-- Simple Interactive Quiz Section -->
+<div class="quiz-box" id="quiz">
+    <h3><i class="fas fa-question-circle"></i> Daily Challenge</h3>
+    <p>Choose the correct sentence:</p>
+    <input type="radio" name="q1"> "I am go to school." <br>
+    <input type="radio" name="q1"> "I am going to school." <br><br>
+    <button class="btn" onclick="alert('Shabash! Sahi jawab hai: I am going to school.')">Submit Answer</button>
+</div>
+
+<footer style="text-align: center; padding: 40px; background: #2c3e50; color: white;">
+    <p>&copy; 2026 English Pro Academy | Made with ❤️ for Learners</p>
+</footer>
+
+</body>
+</html>
